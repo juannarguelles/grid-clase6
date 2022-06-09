@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.item{
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+.item-relative{
+    background-color: blue;
+    position: relative;
+    bottom: 40px;
+    left: 40px;
+
+    /* Z-INDEX trabajamos la profundida */
+    z-index: 2;    
+    /* 
+    top: arriba;
+    bottom: abajo;
+    right: derecha;
+    left: izquierda; 
+    */
+}
+
+.item-absolute{
+    background-color: blueviolet;
+    position: absolute;
+    top: 62px;
+    left: 179px;
+    z-index: 3;
+}
+
+.item-fixed{
+    background-color: rgb(42, 165, 89);
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+/* ##### GRID #### */
+
+.container{
+    /* Aplicamos Grid */
+    display: grid;
+    /* Enumeramos las columnas */
+    /* se puede usar fraction o %, px */
+    /* fr se creó para ser utilizada en Grid */
+    grid-template-columns: repeat(5, 2fr);
+    
+    /* Enumeramos las filas */
+    /* se puede usar fraction o %, px*/
+    grid-template-rows: repeat(4, 150px);
+    /* especificamos nombres para cada item */
+    /* especificamos area vacia con "empty" */
+    grid-template-areas: 
+    "nav header header header header"
+    "nav article article article aside"
+    "nav article1 article1 article1 aside"
+    "nav footer footer footer footer"
+    ;
+
+    /* Espacios */
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+.header{
+    background-color: aquamarine;
+    grid-area: header;
+}
+
+.nav{
+    background-color: bisque;
+    grid-area: nav;
+}
+
+.article{
+    background-color: rgb(109, 109, 206);
+    grid-area: article;
+}
+
+.article1{
+    background-color: rgb(180, 118, 38);
+    grid-area: article1;
+}
+
+.aside{
+    background-color: rgb(132, 211, 132);
+    grid-area: aside;
+}
+
+.footer{
+    background-color: rgb(175, 85, 197);
+    grid-area: footer;
+}
