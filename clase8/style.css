@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+h2{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.box{
+    border-radius: 5px;
+    height: 60px;
+    width: 60px;
+    margin: 50px auto;
+}
+
+.box01{
+    background-color: blueviolet;
+}
+
+.box02{
+    background-color: rgb(150, 86, 96);
+    /* Es la propiedad que aplicamos para las transiciones */
+    transition: all 1s;
+}
+
+.wrap:hover .box{
+    transform: scale(2);
+}
+
+
+.circle00, .circle01,
+.circle02, .circle03, 
+.circle04, .circle05 {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+}
+
+.circle00{
+    background-color: aqua;
+    transition: all 1.5s linear; 
+    /* 2do valor tiempo de transicion */
+    /* transition-timing-function: linear; */
+    /* afectamos la curva de velocidad */
+}
+
+.circle01{
+    background-color: blue;
+    transition: all 1.5s ease-in;
+}
+
+.circle02{
+    background-color: blueviolet;
+    transition: all 1.5s ease-out;
+}
+
+.circle03{
+    background-color: brown;
+    transition: all 1.5s ease-in-out;
+}
+
+.circle04{
+    background-color: burlywood;
+    transition: all 1.5s ease;
+}
+
+.circle05{
+    background-color: coral;
+    transition: all 1.5s linear;
+}
+
+.container-circle:hover .circle00,
+.container-circle:hover .circle01,
+.container-circle:hover .circle02,
+.container-circle:hover .circle03,
+.container-circle:hover .circle04,
+.container-circle:hover .circle05{
+    transform: translateX(300px);
+}
+
+.square00,
+.square01{
+    height: 150px;
+    width: 150px;
+    margin: 150px;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.square00{
+    background-color: rgb(66, 117, 15);
+}
+
+.square01{
+    background-color: chartreuse;
+    transition: all 1s;
+}
+
+.square01:hover{
+    transform: translate(20px, 20px);
+}
+
+.skew{
+    background-color: salmon;
+    height: 75px;
+    width: 75px;
+    transition: all 1s;
+    margin: 0 auto;
+}
+
+.skew:hover{
+    /* valor deg = grados */
+    transform: skewX(50deg);
+}
+
+.combinando{
+    background-color: goldenrod;
+    height: 75px;
+    width: 75px;
+    margin: 0 auto;
+    transition: all 1s;
+}
+
+.combinando:hover {
+    transform: rotate(-90deg) scale(2) translateX(75px);
+}
+
+.origin{
+    background-color: darkslategrey;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    transition: all 3s;
+    transform-origin: left top;
+}
+
+.origin:hover {
+    transform: rotate(500deg);
+}
+
+.animaciones{
+    background-color: darkviolet;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.animaciones:hover {
+    /* Nombre random y duracion*/
+    animation: mantis 3s;
+}
+
+
+/* Se especifica cuando ocurrira el cambio de estilo tanto 
+sea con porcentaje (%) o con las palabras from / to.
+*/
+
+@keyframes mantis {
+    0%{
+        background-color: bisque;
+    }
+    25%{
+        background-color: aqua;
+    }
+    50%{
+        background-color: chartreuse;
+    }
+    75%{
+        background-color: black;
+    }
+    100%{
+        background-color: blue;
+    }
+}
